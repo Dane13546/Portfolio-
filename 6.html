@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian Magazine | Issue 14</title>
+<style>
+  :root{--ink:#151515;--sand:#efe6d6;--paper:#f7f1e4;--tomato:#ee4b2b;--teal:#0f5257;--butter:#f5d76e;--cream:#f4ead8;
+    --serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;--sans:"Avenir Next","Helvetica Neue",Arial,sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:#cfc9bb;padding:32px 14px 64px;font-family:var(--sans);color:var(--ink)}
+  .stack{max-width:1120px;margin:0 auto;display:grid;gap:36px;justify-items:center}
+  .cover{width:min(100%,560px);box-shadow:0 14px 40px rgba(21,21,21,.35);line-height:0}
+  .cover svg{width:100%;height:auto;display:block}
+  .scroll{width:100%;overflow-x:auto;padding-bottom:8px}
+  .spread{container-type:inline-size;min-width:900px;max-width:1120px;margin:0 auto;aspect-ratio:17/11;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 14px 40px rgba(21,21,21,.3);background:var(--paper);position:relative}
+  .spread::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:6cqw;transform:translateX(-50%);background:linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.14) 46%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.14) 54%,rgba(0,0,0,0));pointer-events:none}
+  .pl{position:relative;overflow:hidden;background:var(--tomato)}
+  .pl svg{position:absolute;inset:0;width:100%;height:100%}
+  .quote{position:absolute;left:5cqw;right:5cqw;top:5cqw;color:var(--cream);font-family:var(--serif);font-size:3.1cqw;line-height:1.12;font-weight:700;letter-spacing:-.05cqw}
+  .quote small{display:block;margin-top:1.4cqw;font:700 .78cqw var(--sans);letter-spacing:.26cqw}
+  .cap{position:absolute;left:5cqw;bottom:3.2cqw;color:var(--ink);font-size:.78cqw;max-width:20cqw;line-height:1.45}
+  .cap b{letter-spacing:.14cqw}
+  .folio{position:absolute;bottom:2cqw;font-size:.74cqw;letter-spacing:.2cqw;font-weight:700}
+  .pr{padding:4.6cqw 4.6cqw 4cqw 5.4cqw;display:flex;flex-direction:column;background:var(--paper);position:relative}
+  .kicker{font-size:.8cqw;letter-spacing:.34cqw;font-weight:700;color:var(--tomato);display:flex;gap:1cqw;align-items:center}
+  .kicker i{display:block;width:3cqw;height:.14cqw;background:var(--tomato)}
+  h1{font-family:var(--serif);font-size:5.9cqw;line-height:.96;letter-spacing:-.22cqw;margin:1.3cqw 0 1.2cqw}
+  h1 em{font-style:italic;color:var(--teal)}
+  .stand{font-family:var(--serif);font-style:italic;font-size:1.42cqw;line-height:1.34;color:#3a362f;margin:0 0 1.3cqw;max-width:36cqw}
+  .by{font-size:.74cqw;letter-spacing:.18cqw;font-weight:700;border-top:.12cqw solid var(--ink);padding-top:.9cqw;margin-bottom:1.5cqw;display:flex;justify-content:space-between}
+  .by span{font-weight:400;color:#6b6558}
+  .cols{column-count:3;column-gap:1.5cqw;font-family:var(--serif);font-size:.93cqw;line-height:1.5;text-align:justify;hyphens:auto;color:#26231e}
+  .cols p{margin:0 0 .7cqw}
+  .cols p:first-child::first-letter{float:left;font-size:4.6cqw;line-height:.8;padding:.3cqw .5cqw 0 0;font-weight:700;color:var(--tomato)}
+  .side{position:absolute;right:4.6cqw;bottom:5.6cqw;width:13cqw;background:var(--teal);color:var(--cream);padding:1.2cqw 1.3cqw;border-radius:.2cqw}
+  .side b{display:block;font-size:.72cqw;letter-spacing:.26cqw;margin-bottom:.6cqw;color:var(--butter)}
+  .side p{margin:0;font-family:var(--serif);font-size:.96cqw;line-height:1.35}
+  .pr .folio{right:4.6cqw}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="bars" width="16" height="60" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="2" height="60" fill="#151515"/><rect x="4" y="0" width="1" height="60" fill="#151515"/><rect x="7" y="0" width="3" height="60" fill="#151515"/><rect x="12" y="0" width="1.5" height="60" fill="#151515"/>
+    </pattern>
+  </defs>
+</svg>
+
+<div class="stack">
+
+  <!-- COVER -->
+  <div class="cover">
+    <svg viewBox="0 0 850 1100" role="img" aria-label="Meridian magazine, issue 14, cover: The Quiet Revolution">
+      <rect width="850" height="1100" fill="#efe6d6"/>
+
+      <!-- art -->
+      <path d="M160 1100V560A265 265 0 0 1 690 560V1100Z" fill="#0f5257"/>
+      <path d="M225 1100V568A200 200 0 0 1 625 568V1100Z" fill="#17676b"/>
+      <circle cx="425" cy="440" r="132" fill="#ee4b2b"/>
+      <circle cx="660" cy="888" r="96" fill="#f5d76e"/>
+      <circle cx="196" cy="930" r="62" fill="#f5d76e" opacity=".0"/>
+      <rect x="0" y="960" width="850" height="140" fill="#151515"/>
+      <ellipse cx="425" cy="962" rx="92" ry="9" fill="#000" opacity=".4"/>
+
+      <!-- figure -->
+      <rect x="392" y="880" width="26" height="82" rx="3" fill="#1c1c1c"/><rect x="434" y="880" width="26" height="82" rx="3" fill="#1c1c1c"/>
+      <ellipse cx="405" cy="962" rx="22" ry="7" fill="#0a0a0a"/><ellipse cx="447" cy="962" rx="22" ry="7" fill="#0a0a0a"/>
+      <path d="M386 596L466 596 504 716 496 892 356 892 348 716Z" fill="#f4ead8"/>
+      <path d="M386 596L466 596 504 716 496 892 440 892 440 700 426 700 426 892 356 892 348 716Z" fill="#000" opacity=".05"/>
+      <path d="M404 596L426 668 448 596 466 596 426 690 386 596Z" fill="#151515"/>
+      <path d="M386 604L342 784 362 790 398 656Z" fill="#e6d9bf"/><path d="M466 604L510 784 490 790 454 656Z" fill="#e6d9bf"/>
+      <ellipse cx="350" cy="790" rx="14" ry="12" fill="#8a5a3b"/><ellipse cx="502" cy="790" rx="14" ry="12" fill="#8a5a3b"/>
+      <rect x="415" y="566" width="22" height="34" rx="6" fill="#7a4d31"/>
+      <circle cx="426" cy="510" r="46" fill="#151515"/>
+      <ellipse cx="426" cy="524" rx="31" ry="38" fill="#8a5a3b"/>
+      <path d="M394 506Q426 470 458 506Q448 492 426 490Q404 492 394 506Z" fill="#151515"/>
+      <circle cx="426" cy="437" r="8" fill="#ee4b2b" opacity=".0"/>
+
+      <!-- masthead -->
+      <text x="425" y="60" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="6" fill="#151515">DESIGN  ·  ARCHITECTURE  ·  CULTURE</text>
+      <text x="40" y="196" textLength="770" lengthAdjust="spacingAndGlyphs" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="160" fill="#151515">MERIDIAN</text>
+      <rect x="40" y="214" width="770" height="3" fill="#151515"/>
+      <g font-family="Helvetica Neue,Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="3" fill="#151515">
+        <text x="40" y="240">ISSUE 14</text><text x="425" y="240" text-anchor="middle">AUTUMN 2026</text><text x="810" y="240" text-anchor="end">$14 / £11</text>
+      </g>
+
+      <!-- cover lines left -->
+      <g>
+        <text x="40" y="306" font-family="Helvetica Neue,Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#ee4b2b">THE NEW MODERNISTS</text>
+        <text x="40" y="332" font-family="Georgia,serif" font-weight="700" font-size="21" fill="#151515">Twelve architects</text>
+        <text x="40" y="356" font-family="Georgia,serif" font-weight="700" font-size="21" fill="#151515">redrawing the</text>
+        <text x="40" y="380" font-family="Georgia,serif" font-weight="700" font-size="21" fill="#151515">skyline</text>
+        <rect x="40" y="398" width="46" height="3" fill="#151515"/>
+        <text x="40" y="428" font-family="Helvetica Neue,Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#0f5257">STUDIO VISIT</text>
+        <text x="40" y="450" font-family="Georgia,serif" font-style="italic" font-size="17" fill="#151515">The ceramicist</text>
+        <text x="40" y="471" font-family="Georgia,serif" font-style="italic" font-size="17" fill="#151515">who built a city</text>
+      </g>
+      <!-- cover lines right -->
+      <g text-anchor="end">
+        <text x="810" y="306" font-family="Helvetica Neue,Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#ee4b2b">THE COURTYARD</text>
+        <text x="810" y="332" font-family="Georgia,serif" font-weight="700" font-size="21" fill="#151515">Why every home</text>
+        <text x="810" y="356" font-family="Georgia,serif" font-weight="700" font-size="21" fill="#151515">wants an open</text>
+        <text x="810" y="380" font-family="Georgia,serif" font-weight="700" font-size="21" fill="#151515">sky again</text>
+        <rect x="764" y="398" width="46" height="3" fill="#151515"/>
+        <text x="810" y="428" font-family="Helvetica Neue,Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#0f5257">GUIDE</text>
+        <text x="810" y="450" font-family="Georgia,serif" font-style="italic" font-size="17" fill="#151515">A slow weekend</text>
+        <text x="810" y="471" font-family="Georgia,serif" font-style="italic" font-size="17" fill="#151515">in Accra</text>
+      </g>
+
+      <!-- bottom headline -->
+      <text x="40" y="1032" font-family="Georgia,serif" font-weight="700" font-size="74" fill="#f4ead8" letter-spacing="-1.5">The Quiet</text>
+      <text x="40" y="1090" font-family="Georgia,serif" font-weight="700" font-style="italic" font-size="74" fill="#f5d76e" letter-spacing="-1.5">Revolution</text>
+      <text x="470" y="1008" font-family="Helvetica Neue,Arial,sans-serif" font-size="15" fill="#f4ead8" opacity=".9">How a generation is building</text>
+      <text x="470" y="1030" font-family="Helvetica Neue,Arial,sans-serif" font-size="15" fill="#f4ead8" opacity=".9">slower, warmer, wiser cities</text>
+      <rect x="690" y="1040" width="120" height="44" fill="#f4ead8"/><rect x="698" y="1046" width="104" height="32" fill="url(#bars)"/>
+      <text x="470" y="1075" font-family="Helvetica Neue,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#f5d76e">PLUS  EXCLUSIVE PHOTO ESSAY</text>
+    </svg>
+  </div>
+
+  <!-- FEATURE SPREAD -->
+  <div class="scroll">
+    <div class="spread">
+      <!-- left page -->
+      <div class="pl">
+        <svg viewBox="0 0 850 1100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="850" height="1100" fill="#ee4b2b"/>
+          <path d="M60 1100V560A365 365 0 0 1 790 560V1100Z" fill="#f4ead8"/>
+          <path d="M150 1100V560A275 275 0 0 1 700 560V1100Z" fill="#0f5257"/>
+          <path d="M240 1100V560A185 185 0 0 1 610 560V1100Z" fill="#151515"/>
+          <path d="M330 1100V560A95 95 0 0 1 520 560V1100Z" fill="#f5d76e"/>
+          <path d="M395 1100V576A30 30 0 0 1 455 576V1100Z" fill="#ee4b2b"/>
+          <rect x="0" y="1030" width="850" height="70" fill="#151515"/>
+          <ellipse cx="425" cy="1032" rx="40" ry="5" fill="#000" opacity=".4"/>
+          <rect x="415" y="962" width="8" height="70" rx="2" fill="#151515"/><rect x="428" y="962" width="8" height="70" rx="2" fill="#151515"/>
+          <path d="M406 910h40l6 56h-52z" fill="#f4ead8"/><circle cx="426" cy="896" r="14" fill="#8a5a3b"/>
+        </svg>
+        <div class="quote">&ldquo;Start with one street. Then ask me again in ten years.&rdquo;<small>AMA BOATENG, ARCHITECT</small></div>
+        <div class="cap"><b>THE COURTYARD HOUSE, KUMASI.</b> Rammed-earth walls and a deep colonnade keep the interior ten degrees cooler than the street.</div>
+        <div class="folio" style="left:5cqw;bottom:1.3cqw;color:#151515">42</div>
+      </div>
+
+      <!-- right page -->
+      <div class="pr">
+        <div class="kicker"><i></i>ARCHITECTURE</div>
+        <h1>A city, <em>built slowly</em></h1>
+        <p class="stand">In Kumasi, a new generation of architects is trading glass towers for thick walls, deep shade and the patience of earth.</p>
+        <div class="by">WORDS ADA OKORO<span>PHOTOGRAPHY KWESI MENSAH</span></div>
+        <div class="cols">
+          <p>On a Tuesday morning the scaffolding is bamboo and the blueprint is a sketch on the back of a paper bag. Ama Boateng, 38, kneels beside a half-finished courtyard and runs her palm along a wall of rammed earth that has taken eleven days to cure. &ldquo;Concrete is fast,&rdquo; she says. &ldquo;But a house should be allowed to take its time.&rdquo;</p>
+          <p>Boateng belongs to a growing circle of architects who are trading steel and glass for thick walls, deep shade and local materials. Their buildings are not nostalgic. They are quietly precise: timber joints cut by hand, roofs tuned to the prevailing wind, rooms that cool themselves without a single machine.</p>
+          <p>The movement has found unlikely allies. Developers, once wary of long build times, now report lower running costs and waiting lists of tenants. City councils are rewriting codes to reward walls that breathe.</p>
+          <p>Critics worry about scale. Can mud and bamboo house a million people? Boateng smiles at the question. &ldquo;We are not against tall,&rdquo; she says. &ldquo;We are against hurry.&rdquo;</p>
+        </div>
+        <div class="side"><b>BY THE NUMBERS</b><p>11 days to cure one wall. 10&deg; cooler indoors. 0 air-conditioning units.</p></div>
+        <div class="folio" style="right:4.6cqw;bottom:2cqw">MERIDIAN &nbsp; 43</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

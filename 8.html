@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arca Studio | Logo Presentation</title>
+<style>
+  :root{--ink:#101828;--saffron:#f5a524;--paper:#f7f5f0;--slate:#667085;--mist:#e7e4db;
+    --sans:"Avenir Next","Helvetica Neue",Arial,sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:#e3e0d6;font-family:var(--sans);color:var(--ink);padding:28px 14px 56px}
+  .board{max-width:1180px;margin:0 auto;display:grid;gap:18px}
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .panel{border-radius:18px;padding:26px;position:relative;overflow:hidden}
+  .cap{font-size:11px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;opacity:.6;margin:0 0 16px}
+  .center{display:grid;place-items:center}
+  svg{display:block}
+  .hero{background:var(--ink);min-height:420px;display:grid;place-items:center;color:var(--paper)}
+  .hero .cap{position:absolute;left:26px;top:26px;margin:0}
+  .tile{min-height:230px;border-radius:18px;display:grid;place-items:center;padding:22px}
+  .sizes{display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap}
+  .sizes figure{margin:0;display:grid;gap:8px;justify-items:center;font-size:11px;color:var(--slate);letter-spacing:1px}
+  .icons{display:flex;gap:22px;align-items:flex-end;flex-wrap:wrap}
+  .icons figure{margin:0;display:grid;gap:8px;justify-items:center;font-size:11px;color:var(--slate);letter-spacing:1px}
+  @media(max-width:860px){.g2,.g3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Arca mark: an arch inside an arch. 100 x 100 grid. -->
+    <symbol id="mark" viewBox="0 0 100 100">
+      <path d="M10 92V46A40 40 0 0 1 90 46V92H70V46A20 20 0 0 0 30 46V92Z" fill="var(--m1,#101828)"/>
+      <path d="M42 92V54A8 8 0 0 1 58 54V92Z" fill="var(--m2,#f5a524)"/>
+    </symbol>
+    <linearGradient id="gSign" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
+    <linearGradient id="gTote" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".14"/><stop offset=".25" stop-color="#fff" stop-opacity=".14"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
+    <filter id="sb" x="-30%" y="-300%" width="160%" height="700%"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+</svg>
+
+<div class="board">
+
+  <!-- Primary logo -->
+  <div class="panel hero">
+    <p class="cap">Primary logo</p>
+    <svg viewBox="0 0 640 200" width="min(88%,760px)" role="img" aria-label="Arca Studio logo">
+      <use href="#mark" x="20" y="20" width="160" height="160" style="--m1:#f7f5f0;--m2:#f5a524"/>
+      <text x="214" y="112" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="104" letter-spacing="14" fill="#f7f5f0">ARCA</text>
+      <rect x="220" y="132" width="360" height="3" fill="#f5a524"/>
+      <text x="220" y="168" font-family="Helvetica Neue,Arial,sans-serif" font-weight="600" font-size="20" letter-spacing="9.5" fill="#f5a524">ARCHITECTURE STUDIO</text>
+    </svg>
+  </div>
+
+  <!-- Construction + clear space -->
+  <div class="grid g2">
+    <div class="panel" style="background:var(--paper)">
+      <p class="cap">Construction</p>
+      <svg viewBox="0 0 400 400" width="100%" role="img" aria-label="Construction grid of the Arca mark">
+        <rect x="30" y="30" width="340" height="340" fill="none" stroke="#d6d2c6"/>
+        <g stroke="#e4e0d4"><path d="M64 30V370M98 30V370M132 30V370M166 30V370M200 30V370M234 30V370M268 30V370M302 30V370M336 30V370M30 64H370M30 98H370M30 132H370M30 166H370M30 200H370M30 234H370M30 268H370M30 302H370M30 336H370"/></g>
+        <use href="#mark" x="30" y="30" width="340" height="340" style="--m1:#101828;--m2:#f5a524"/>
+        <g fill="none" stroke="#f5a524" stroke-width="2" stroke-dasharray="6 6">
+          <circle cx="200" cy="186.4" r="136"/><circle cx="200" cy="186.4" r="68"/><circle cx="200" cy="213.6" r="27.2"/>
+        </g>
+        <g stroke="#e5484d" stroke-width="1.5"><path d="M30 186.4H370M200 30V370"/></g>
+        <g fill="#e5484d"><circle cx="200" cy="186.4" r="4"/><circle cx="200" cy="213.6" r="4"/></g>
+        <g font-family="Helvetica Neue,Arial,sans-serif" font-size="11" font-weight="700" fill="#667085" letter-spacing="1.4">
+          <text x="338" y="180" text-anchor="end">R 40</text><text x="270" y="180" text-anchor="end">R 20</text><text x="240" y="236">R 8</text>
+        </g>
+      </svg>
+    </div>
+    <div class="panel" style="background:#efece3">
+      <p class="cap">Clear space and minimum size</p>
+      <svg viewBox="0 0 560 320" width="100%" role="img" aria-label="Clear space around the logo equals the width of the inner arch">
+        <rect x="40" y="30" width="480" height="200" fill="none" stroke="#e5484d" stroke-dasharray="6 5"/>
+        <rect x="100" y="70" width="360" height="120" fill="#f7f5f0"/>
+        <use href="#mark" x="116" y="82" width="96" height="96" style="--m1:#101828;--m2:#f5a524"/>
+        <text x="236" y="146" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="56" letter-spacing="8" fill="#101828">ARCA</text>
+        <rect x="240" y="158" width="190" height="2.4" fill="#f5a524"/>
+        <g fill="#e5484d" opacity=".12"><rect x="40" y="30" width="480" height="40"/><rect x="40" y="190" width="480" height="40"/><rect x="40" y="70" width="60" height="120"/><rect x="460" y="70" width="60" height="120"/></g>
+        <g font-family="Helvetica Neue,Arial,sans-serif" font-size="14" font-weight="800" fill="#e5484d" text-anchor="middle"><text x="280" y="56">x</text><text x="280" y="216">x</text><text x="70" y="136">x</text><text x="490" y="136">x</text></g>
+        <g font-family="Helvetica Neue,Arial,sans-serif" font-size="11" fill="#667085" letter-spacing="1.2">
+          <text x="40" y="280">x = width of the inner arch</text>
+          <text x="40" y="300">Minimum size: 24 px mark, 96 px lockup</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Versions -->
+  <div class="grid g3">
+    <div class="tile" style="background:var(--paper)">
+      <svg viewBox="0 0 360 100" width="92%"><use href="#mark" x="0" y="0" width="96" height="96" style="--m1:#101828;--m2:#f5a524"/><text x="114" y="60" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="52" letter-spacing="8" fill="#101828">ARCA</text><text x="116" y="86" font-family="Helvetica Neue,Arial,sans-serif" font-weight="600" font-size="11.5" letter-spacing="5.2" fill="#667085">ARCHITECTURE STUDIO</text></svg>
+    </div>
+    <div class="tile" style="background:var(--ink)">
+      <svg viewBox="0 0 220 210" width="58%"><use href="#mark" x="55" y="0" width="110" height="110" style="--m1:#f7f5f0;--m2:#f5a524"/><text x="110" y="156" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="46" letter-spacing="8" fill="#f7f5f0">ARCA</text><text x="110" y="186" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-weight="600" font-size="11" letter-spacing="4.6" fill="#f5a524">ARCHITECTURE STUDIO</text></svg>
+    </div>
+    <div class="tile" style="background:var(--saffron)">
+      <svg viewBox="0 0 100 100" width="40%"><use href="#mark" width="100" height="100" style="--m1:#101828;--m2:#101828"/></svg>
+    </div>
+    <div class="tile" style="background:#fff;border:1px solid var(--mist)">
+      <svg viewBox="0 0 300 100" width="80%"><use href="#mark" x="0" y="0" width="96" height="96" style="--m1:#101828;--m2:#101828"/><text x="114" y="68" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="54" letter-spacing="8" fill="#101828">ARCA</text></svg>
+    </div>
+    <div class="tile" style="background:#344054">
+      <svg viewBox="0 0 300 100" width="80%"><use href="#mark" x="0" y="0" width="96" height="96" style="--m1:#fff;--m2:#fff"/><text x="114" y="68" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="54" letter-spacing="8" fill="#fff">ARCA</text></svg>
+    </div>
+    <div class="tile" style="background:#e9e4d6">
+      <svg viewBox="0 0 100 100" width="40%"><use href="#mark" width="100" height="100" style="--m1:#101828;--m2:#f5a524"/></svg>
+    </div>
+  </div>
+
+  <!-- App icons + sizes -->
+  <div class="grid g2">
+    <div class="panel" style="background:var(--paper)">
+      <p class="cap">App icon, favicon and avatar</p>
+      <div class="icons">
+        <figure><svg viewBox="0 0 120 120" width="120"><rect width="120" height="120" rx="27" fill="#101828"/><use href="#mark" x="26" y="24" width="68" height="68" style="--m1:#f7f5f0;--m2:#f5a524"/></svg></figure>
+        <figure><svg viewBox="0 0 120 120" width="120"><rect width="120" height="120" rx="27" fill="#f5a524"/><use href="#mark" x="26" y="24" width="68" height="68" style="--m1:#101828;--m2:#101828"/></svg></figure>
+        <figure><svg viewBox="0 0 120 120" width="120"><circle cx="60" cy="60" r="60" fill="#101828"/><use href="#mark" x="30" y="28" width="60" height="60" style="--m1:#f7f5f0;--m2:#f5a524"/></svg></figure>
+        <figure><svg viewBox="0 0 64 64" width="64"><rect width="64" height="64" rx="14" fill="#101828"/><use href="#mark" x="14" y="13" width="36" height="36" style="--m1:#f7f5f0;--m2:#f5a524"/></svg></figure>
+        <figure><svg viewBox="0 0 32 32" width="32"><rect width="32" height="32" rx="7" fill="#101828"/><use href="#mark" x="7" y="6.5" width="18" height="18" style="--m1:#f7f5f0;--m2:#f5a524"/></svg></figure>
+      </div>
+    </div>
+    <div class="panel" style="background:#efece3">
+      <p class="cap">Scaling</p>
+      <div class="sizes">
+        <figure><svg viewBox="0 0 100 100" width="96"><use href="#mark" width="100" height="100" style="--m1:#101828;--m2:#f5a524"/></svg>96 px</figure>
+        <figure><svg viewBox="0 0 100 100" width="48"><use href="#mark" width="100" height="100" style="--m1:#101828;--m2:#f5a524"/></svg>48 px</figure>
+        <figure><svg viewBox="0 0 100 100" width="32"><use href="#mark" width="100" height="100" style="--m1:#101828;--m2:#f5a524"/></svg>32 px</figure>
+        <figure><svg viewBox="0 0 100 100" width="24"><use href="#mark" width="100" height="100" style="--m1:#101828;--m2:#f5a524"/></svg>24 px</figure>
+        <figure><svg viewBox="0 0 300 100" width="120"><use href="#mark" width="96" height="96" style="--m1:#101828;--m2:#f5a524"/><text x="114" y="68" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="54" letter-spacing="8" fill="#101828">ARCA</text></svg>120 px</figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- In context -->
+  <div class="grid g2">
+    <div class="panel" style="background:#d9d4c6;padding:0">
+      <svg viewBox="0 0 600 420" width="100%" role="img" aria-label="Storefront sign mockup">
+        <rect width="600" height="420" fill="#d9d4c6"/>
+        <rect x="0" y="330" width="600" height="90" fill="#bdb6a4"/>
+        <rect x="60" y="60" width="480" height="270" fill="#efece3"/>
+        <rect x="60" y="60" width="480" height="270" fill="url(#gSign)"/>
+        <rect x="90" y="118" width="190" height="212" fill="#101828"/><rect x="100" y="128" width="170" height="202" fill="#2a3750" opacity=".9"/>
+        <path d="M185 128v202" stroke="#101828" stroke-width="4"/><path d="M100 230h170" stroke="#101828" stroke-width="3"/>
+        <rect x="320" y="118" width="190" height="212" fill="#e4dfd1"/><rect x="332" y="132" width="166" height="120" fill="#fff" opacity=".7"/>
+        <rect x="332" y="268" width="90" height="10" fill="#101828" opacity=".7"/><rect x="332" y="288" width="60" height="8" fill="#f5a524"/>
+        <rect x="120" y="76" width="360" height="32" fill="#101828"/>
+        <use href="#mark" x="140" y="80" width="24" height="24" style="--m1:#f7f5f0;--m2:#f5a524"/>
+        <text x="176" y="100" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="19" letter-spacing="7" fill="#f7f5f0">ARCA STUDIO</text>
+        <ellipse cx="300" cy="334" rx="250" ry="7" fill="#000" opacity=".22" filter="url(#sb)"/>
+      </svg>
+    </div>
+    <div class="panel" style="background:#f5a524;padding:0">
+      <svg viewBox="0 0 600 420" width="100%" role="img" aria-label="Tote bag mockup">
+        <rect width="600" height="420" fill="#f5a524"/>
+        <ellipse cx="300" cy="392" rx="150" ry="10" fill="#000" opacity=".25" filter="url(#sb)"/>
+        <path d="M220 120C220 40 380 40 380 120" fill="none" stroke="#e8dfc8" stroke-width="14" stroke-linecap="round"/>
+        <path d="M172 120H428L444 380Q444 392 432 392H168Q156 392 156 380Z" fill="#f2ecdd"/>
+        <path d="M172 120H428L444 380Q444 392 432 392H168Q156 392 156 380Z" fill="url(#gTote)"/>
+        <path d="M172 130H428" stroke="#000" stroke-opacity=".08" stroke-width="3"/>
+        <use href="#mark" x="256" y="200" width="88" height="88" style="--m1:#101828;--m2:#f5a524"/>
+        <text x="300" y="326" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="28" letter-spacing="8" fill="#101828">ARCA</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

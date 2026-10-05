@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moonlit Night Market | A4 Flyer</title>
+<style>
+  html,body{margin:0;background:#0a1620}
+  body{display:flex;justify-content:center;padding:24px 12px}
+  svg{width:min(100%,640px);height:auto;display:block;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+  @media print{body{padding:0;background:#fff} svg{width:210mm;height:297mm;box-shadow:none}}
+</style>
+</head>
+<body>
+<svg viewBox="0 0 840 1188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flyer for the Moonlit Night Market, 15 to 17 November, 5 PM to 11 PM, Riverside Park, free entry">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#08151f"/><stop offset=".55" stop-color="#10303f"/><stop offset="1" stop-color="#16424f"/>
+    </linearGradient>
+    <radialGradient id="moonGlow"><stop offset="0" stop-color="#fff3dc" stop-opacity=".55"/><stop offset="1" stop-color="#fff3dc" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lg"><stop offset="0" stop-color="#ffc83d" stop-opacity=".7"/><stop offset="1" stop-color="#ffc83d" stop-opacity="0"/></radialGradient>
+    <symbol id="stall" viewBox="0 0 150 165">
+      <rect x="12" y="40" width="4" height="105" fill="#0a1620"/><rect x="134" y="40" width="4" height="105" fill="#0a1620"/>
+      <polygon points="25,8 41.67,8 28.33,40 5,40" fill="var(--a,#ff7a3d)"/>
+      <polygon points="41.67,8 58.33,8 51.67,40 28.33,40" fill="#fff3dc"/>
+      <polygon points="58.33,8 75,8 75,40 51.67,40" fill="var(--a,#ff7a3d)"/>
+      <polygon points="75,8 91.67,8 98.33,40 75,40" fill="#fff3dc"/>
+      <polygon points="91.67,8 108.33,8 121.67,40 98.33,40" fill="var(--a,#ff7a3d)"/>
+      <polygon points="108.33,8 125,8 145,40 121.67,40" fill="#fff3dc"/>
+      <path d="M5 40A11.67 11.67 0 0 0 28.33 40Z" fill="var(--a,#ff7a3d)"/>
+      <path d="M28.33 40A11.67 11.67 0 0 0 51.67 40Z" fill="#fff3dc"/>
+      <path d="M51.67 40A11.67 11.67 0 0 0 75 40Z" fill="var(--a,#ff7a3d)"/>
+      <path d="M75 40A11.67 11.67 0 0 0 98.33 40Z" fill="#fff3dc"/>
+      <path d="M98.33 40A11.67 11.67 0 0 0 121.67 40Z" fill="var(--a,#ff7a3d)"/>
+      <path d="M121.67 40A11.67 11.67 0 0 0 145 40Z" fill="#fff3dc"/>
+      <circle cx="75" cy="66" r="22" fill="url(#lg)"/><circle cx="75" cy="66" r="7" fill="#ffc83d"/>
+      <rect x="8" y="104" width="134" height="58" fill="#0a1620"/><rect x="8" y="104" width="134" height="6" fill="var(--a,#ff7a3d)"/>
+      <circle cx="34" cy="96" r="8" fill="#ffc83d"/><circle cx="52" cy="98" r="6" fill="#ff4f8b"/>
+      <rect x="84" y="86" width="22" height="18" rx="3" fill="#fff3dc"/><rect x="112" y="92" width="18" height="12" rx="3" fill="#ffc83d"/>
+    </symbol>
+    <symbol id="lantern" viewBox="-20 0 40 80">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#fff3dc" stroke-width="1.5"/>
+      <rect x="-7" y="12" width="14" height="5" rx="2" fill="#0a1620"/>
+      <ellipse cx="0" cy="36" rx="15" ry="20" fill="var(--c,#ff7a3d)"/>
+      <ellipse cx="0" cy="36" rx="7" ry="20" fill="#fff" opacity=".18"/>
+      <path d="M-14 36h28" stroke="#0a1620" stroke-opacity=".25"/>
+      <rect x="-7" y="54" width="14" height="5" rx="2" fill="#0a1620"/>
+      <line x1="0" y1="59" x2="0" y2="74" stroke="var(--c,#ff7a3d)" stroke-width="2"/>
+    </symbol>
+  </defs>
+
+  <rect width="840" height="1188" fill="url(#sky)"/>
+  <g id="stars" fill="#fff3dc"></g>
+
+  <!-- Moon -->
+  <circle cx="650" cy="270" r="190" fill="url(#moonGlow)"/>
+  <circle cx="650" cy="270" r="112" fill="#fff3dc"/>
+  <g fill="#f0dfbd"><circle cx="612" cy="240" r="20"/><circle cx="688" cy="300" r="26"/><circle cx="640" cy="318" r="11"/><circle cx="696" cy="228" r="9"/></g>
+
+  <!-- Lantern string -->
+  <path d="M-10 40Q210 120 420 70T850 96" stroke="#fff3dc" stroke-opacity=".7" stroke-width="2" fill="none"/>
+  <g>
+    <use href="#lantern" x="70" y="62" width="40" height="80" style="--c:#ff7a3d"/>
+    <use href="#lantern" x="170" y="86" width="40" height="80" style="--c:#ff4f8b"/>
+    <use href="#lantern" x="270" y="92" width="40" height="80" style="--c:#ffc83d"/>
+    <use href="#lantern" x="370" y="82" width="40" height="80" style="--c:#ff7a3d"/>
+    <use href="#lantern" x="470" y="68" width="40" height="80" style="--c:#ff4f8b"/>
+  </g>
+
+  <!-- Eyebrow -->
+  <text x="60" y="352" font-family="Helvetica Neue,Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="9" fill="#ffc83d">THE 3RD ANNUAL</text>
+
+  <!-- Title -->
+  <text x="54" y="480" font-family="Arial Black,Impact,Helvetica Neue,sans-serif" font-size="148" font-weight="900" fill="#fff3dc" letter-spacing="-2">MOONLIT</text>
+  <text x="58" y="574" font-family="Arial Black,Impact,Helvetica Neue,sans-serif" font-size="88" font-weight="900" fill="#ff7a3d" letter-spacing="1">NIGHT MARKET</text>
+  <text x="60" y="618" font-family="Georgia,serif" font-size="26" font-style="italic" fill="#fff3dc" opacity=".9">Three nights of lanterns, flavour and live music.</text>
+
+  <!-- Feature row -->
+  <g font-family="Helvetica Neue,Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="2" fill="#fff3dc">
+    <g transform="translate(60 668)">
+      <circle cx="26" cy="26" r="26" fill="#ff7a3d"/>
+      <path d="M12 26h28a14 14 0 01-28 0z" fill="#08151f"/><path d="M20 20c-3-3 3-5 0-8M28 20c-3-3 3-5 0-8M36 20c-3-3 3-5 0-8" stroke="#08151f" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <text x="64" y="33">STREET FOOD</text>
+    </g>
+    <g transform="translate(316 668)">
+      <circle cx="26" cy="26" r="26" fill="#ff4f8b"/>
+      <path d="M26 10l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="#08151f"/>
+      <text x="64" y="33">HANDMADE CRAFTS</text>
+    </g>
+    <g transform="translate(618 668)">
+      <circle cx="26" cy="26" r="26" fill="#ffc83d"/>
+      <path d="M21 36V14l16-4v22" stroke="#08151f" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="37" r="5" fill="#08151f"/><circle cx="33" cy="33" r="5" fill="#08151f"/>
+      <text x="64" y="33">LIVE MUSIC</text>
+    </g>
+  </g>
+
+  <!-- Stalls -->
+  <path d="M0 880Q420 850 840 880V900H0Z" fill="#0a1620" opacity=".55"/>
+  <use href="#stall" x="50" y="738" width="150" height="165" style="--a:#ff7a3d"/>
+  <use href="#stall" x="250" y="738" width="150" height="165" style="--a:#ff4f8b"/>
+  <use href="#stall" x="450" y="738" width="150" height="165" style="--a:#ffc83d"/>
+  <use href="#stall" x="640" y="738" width="150" height="165" style="--a:#ff7a3d"/>
+  <rect x="0" y="898" width="840" height="14" fill="#0a1620"/>
+
+  <!-- Info panel -->
+  <rect x="48" y="930" width="744" height="162" rx="26" fill="#fff3dc"/>
+  <g font-family="Helvetica Neue,Arial,sans-serif" fill="#08151f">
+    <text x="82" y="1000" font-family="Arial Black,Impact,sans-serif" font-size="66" font-weight="900" letter-spacing="-1">15–17 NOV</text>
+    <text x="84" y="1034" font-size="19" font-weight="700" letter-spacing="5" fill="#ff7a3d">FRI &#183; SAT &#183; SUN</text>
+    <rect x="404" y="954" width="2" height="114" fill="#08151f" opacity=".18"/>
+    <text x="434" y="990" font-size="16" font-weight="700" letter-spacing="3" fill="#75675f">OPEN</text>
+    <text x="434" y="1020" font-size="30" font-weight="800">5 PM – 11 PM</text>
+    <text x="434" y="1054" font-size="16" font-weight="700" letter-spacing="3" fill="#75675f">WHERE</text>
+    <text x="434" y="1080" font-size="23" font-weight="800">Riverside Park, Main Gate</text>
+  </g>
+  <g transform="translate(700 934) rotate(10)">
+    <circle r="62" fill="#ff4f8b"/><circle r="55" fill="none" stroke="#fff3dc" stroke-width="2" stroke-dasharray="4 5"/>
+    <text y="-6" text-anchor="middle" font-family="Arial Black,Impact,sans-serif" font-size="30" fill="#fff3dc">FREE</text>
+    <text y="22" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#fff3dc">ENTRY</text>
+  </g>
+
+  <!-- Footer -->
+  <rect y="1112" width="840" height="76" fill="#ff7a3d"/>
+  <g transform="translate(48 1122)"><rect width="56" height="56" rx="6" fill="#fff3dc"/><g id="qr" transform="translate(2.5 2.5)" fill="#08151f"></g></g>
+  <g font-family="Helvetica Neue,Arial,sans-serif" fill="#08151f">
+    <text x="124" y="1146" font-size="21" font-weight="800">moonlitmarket.example</text>
+    <text x="124" y="1170" font-size="16" font-weight="600">Scan for the full lineup  |  @moonlitmarket</text>
+    <text x="792" y="1146" text-anchor="end" font-size="15" font-weight="700" letter-spacing="2">BRING FRIENDS.</text>
+    <text x="792" y="1170" text-anchor="end" font-size="15" font-weight="700" letter-spacing="2">BRING AN APPETITE.</text>
+  </g>
+</svg>
+
+<script>
+  (function(){
+    var ns='http://www.w3.org/2000/svg', g=document.getElementById('stars'), seed=7;
+    function r(){seed=(seed*9301+49297)%233280;return seed/233280;}
+    for(var i=0;i<70;i++){
+      var c=document.createElementNS(ns,'circle');
+      c.setAttribute('cx',(r()*840).toFixed(0)); c.setAttribute('cy',(60+r()*600).toFixed(0));
+      c.setAttribute('r',(0.8+r()*1.8).toFixed(1)); c.setAttribute('opacity',(0.3+r()*0.6).toFixed(2));
+      g.appendChild(c);
+    }
+    var q=document.getElementById('qr'), n=17, m=3;
+    function finder(x,y){[[0,0,7,1],[1,1,5,0],[2,2,3,1]].forEach(function(a){
+      var e=document.createElementNS(ns,'rect');e.setAttribute('x',(x+a[0])*m);e.setAttribute('y',(y+a[0])*m);
+      e.setAttribute('width',a[2]*m);e.setAttribute('height',a[2]*m);e.setAttribute('fill',a[3]?'#08151f':'#fff3dc');q.appendChild(e);});}
+    for(var y=0;y<n;y++)for(var x=0;x<n;x++){
+      var inF=(x<8&&y<8)||(x>n-9&&y<8)||(x<8&&y>n-9);
+      if(inF)continue;
+      if(r()>.52){var e=document.createElementNS(ns,'rect');e.setAttribute('x',x*m);e.setAttribute('y',y*m);e.setAttribute('width',m);e.setAttribute('height',m);q.appendChild(e);}
+    }
+    finder(0,0);finder(n-7,0);finder(0,n-7);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fig &amp; Cedar Ceramic Candle | Kiln &amp; Wick</title>
+<style>
+  :root{
+    --char:#2a1f1c; --ink:#2a1f1c; --muted:#75675f; --stone:#f1e8de; --stone-2:#e0d3c4; --white:#fff;
+    --rust:#b4492d; --rust-soft:#f5dccf; --line:#e4d9cb; --gold:#d29a2e;
+    --serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+    --sans:"Avenir Next","Helvetica Neue",Arial,sans-serif;
+    --vessel:#e9e3d5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.55}
+  a{color:inherit;text-decoration:none}
+  .ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  button,input{font-family:inherit}
+  :focus-visible{outline:3px solid var(--rust);outline-offset:2px}
+
+  .announce{background:var(--rust);color:#fff;text-align:center;font-size:13px;padding:9px 16px}
+  header{border-bottom:1px solid var(--line);background:var(--white)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-family:var(--serif);font-size:24px;font-weight:700;letter-spacing:1px}
+  .logo span{color:var(--rust)}
+  .nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:15px}
+  .tools{display:flex;gap:18px}
+  .crumbs{font-size:13px;color:var(--muted);padding:18px 0}
+  .crumbs a:hover{color:var(--rust)}
+
+  .pdp{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;padding-bottom:64px}
+  .gallery{display:grid;grid-template-columns:78px 1fr;gap:14px;align-items:start}
+  .thumbs{display:grid;gap:12px}
+  .thumb{border:1.5px solid transparent;border-radius:10px;background:var(--stone);aspect-ratio:1;padding:0;cursor:pointer;overflow:hidden}
+  .thumb.on{border-color:var(--char)}
+  .thumb svg{width:100%;height:100%;display:block}
+  .main{background:radial-gradient(ellipse at 50% 30%,#fbf5ec,var(--stone) 72%);border-radius:18px;aspect-ratio:1/1.06;position:relative;overflow:hidden}
+  .main svg{width:100%;height:100%;display:block}
+  .tag{position:absolute;top:16px;left:16px;background:var(--white);font-size:12px;font-weight:700;letter-spacing:.6px;padding:6px 12px;border-radius:999px}
+
+  .info h1{font-family:var(--serif);font-size:clamp(30px,3.6vw,42px);line-height:1.1;margin:0 0 10px;letter-spacing:-.5px}
+  .rating{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+  .rating b{color:var(--gold);letter-spacing:2px}
+  .price{font-size:26px;font-weight:700;margin:16px 0 4px}
+  .price s{font-size:16px;color:var(--muted);font-weight:400;margin-left:8px}
+  .short{color:var(--muted);margin:10px 0 22px;max-width:500px}
+  .label{font-size:13px;font-weight:700;letter-spacing:.4px;margin:0 0 10px;display:flex;justify-content:space-between}
+  .label span{font-weight:400;color:var(--muted)}
+  .notes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+  .notes span{background:var(--stone);border-radius:999px;padding:6px 14px;font-size:13px}
+  .swatches{display:flex;gap:12px;margin-bottom:22px}
+  .sw{width:40px;height:40px;border-radius:50%;border:2px solid var(--white);box-shadow:0 0 0 1.5px var(--stone-2);cursor:pointer;padding:0}
+  .sw[aria-pressed="true"]{box-shadow:0 0 0 2px var(--char)}
+  .sizes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+  .size{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;cursor:pointer;text-align:left;font-size:14px}
+  .size b{display:block}
+  .size small{color:var(--muted)}
+  .size[aria-pressed="true"]{border-color:var(--char);background:var(--stone)}
+  .buy{display:flex;gap:12px;margin-bottom:12px}
+  .qty{display:flex;align-items:center;border:1.5px solid var(--char);border-radius:999px}
+  .qty button{width:42px;height:50px;border:0;background:none;font-size:20px;cursor:pointer}
+  .qty span{min-width:22px;text-align:center;font-weight:600}
+  .atc{flex:1;border:0;border-radius:999px;background:var(--char);color:#fff;font-size:16px;font-weight:600;cursor:pointer}
+  .atc:hover{background:var(--rust)}
+  .sub{display:flex;gap:10px;align-items:center;background:var(--rust-soft);border-radius:12px;padding:12px 14px;font-size:14px;margin-bottom:18px}
+  .sub input{accent-color:var(--rust);width:18px;height:18px}
+  .deliver{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted);margin-bottom:22px}
+  .deliver b{color:var(--ink)}
+  .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-block:1px solid var(--line);padding:18px 0;margin-bottom:6px;text-align:center;font-size:13px}
+  .trust div{display:grid;gap:6px;justify-items:center}
+  .trust .ic{color:var(--rust);width:26px;height:26px}
+  details{border-bottom:1px solid var(--line);padding:16px 0}
+  summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:22px;font-weight:400}
+  details[open] summary::after{content:"\2212"}
+  details p,details ul{margin:12px 0 0;color:var(--muted);font-size:15px}
+  details ul{padding-left:18px}
+
+  section.block{padding:64px 0;border-top:1px solid var(--line)}
+  .block h2{font-family:var(--serif);font-size:clamp(26px,3vw,34px);margin:0 0 26px}
+  .rel{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .rcard .img{background:var(--stone);border-radius:14px;aspect-ratio:1;overflow:hidden}
+  .rcard .img svg{width:100%;height:100%;display:block}
+  .rcard h3{font-size:16px;margin:12px 0 2px}
+  .rcard p{margin:0;color:var(--muted);font-size:14px}
+  .rcard .pr{font-weight:700;color:var(--ink);margin-top:4px}
+
+  .reviews{display:grid;grid-template-columns:300px 1fr;gap:56px}
+  .score{font-family:var(--serif);font-size:64px;line-height:1}
+  .bars{display:grid;gap:8px;margin-top:16px;font-size:13px;color:var(--muted)}
+  .bar{display:grid;grid-template-columns:26px 1fr 34px;gap:8px;align-items:center}
+  .bar i{height:8px;border-radius:4px;background:var(--stone);display:block;position:relative;overflow:hidden}
+  .bar i::after{content:"";position:absolute;inset:0;width:var(--w);background:var(--gold)}
+  .rev{padding:0 0 24px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+  .rev .top{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+  .rev b.s{color:var(--gold);letter-spacing:2px}
+  .rev h3{margin:6px 0 4px;font-size:17px}
+  .rev p{margin:0;color:var(--muted)}
+  .ver{display:inline-flex;gap:6px;align-items:center;color:var(--rust);font-size:13px;font-weight:600;margin-top:8px}
+  .ver .ic{width:16px;height:16px}
+
+  footer{background:var(--char);color:#d6c9bf;padding:48px 0 24px;font-size:14px}
+  .fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px}
+  footer .logo{color:#fff;margin-bottom:8px}
+  footer h4{color:#fff;margin:0 0 10px}
+  footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+  .legal{border-top:1px solid #4a3a35;margin-top:28px;padding-top:18px;font-size:13px}
+
+  @media(max-width:900px){
+    .nav ul{display:none}
+    .pdp{grid-template-columns:1fr;gap:28px}
+    .gallery{grid-template-columns:1fr}
+    .thumbs{grid-template-columns:repeat(4,1fr);order:2}
+    .rel{grid-template-columns:repeat(2,1fr)}
+    .reviews{grid-template-columns:1fr;gap:28px}
+    .fg{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 10h5l3 3v3h-8"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 01-10 0c0-2 1-3 2-4 .3 1.5 1 2 1.8 2C10.5 8 11 5.5 12 3z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-5 6-8 10-10"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 12V6a1.5 1.5 0 013 0v5M11 11V4.5a1.5 1.5 0 013 0V11M14 11V6a1.5 1.5 0 013 0v8c0 4-2.5 7-6 7s-5-2-6.5-5L3 13a1.5 1.5 0 012.5-1.5L8 14"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+
+    <!-- Candle vessel. Colors are set with --vessel, --wax, --lbl on each use. -->
+    
+    <linearGradient id="gCyl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".4"/><stop offset=".1" stop-color="#000" stop-opacity=".12"/>
+      <stop offset=".26" stop-color="#fff" stop-opacity=".34"/><stop offset=".38" stop-color="#fff" stop-opacity=".06"/>
+      <stop offset=".62" stop-color="#000" stop-opacity=".02"/><stop offset=".85" stop-color="#000" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".44"/>
+    </linearGradient>
+    <linearGradient id="gLabel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".2" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".8" stop-color="#000" stop-opacity=".04"/><stop offset="1" stop-color="#000" stop-opacity=".22"/>
+    </linearGradient>
+    <linearGradient id="gFlame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a0"/><stop offset=".5" stop-color="#ffb347"/><stop offset="1" stop-color="#ff7a1a"/></linearGradient>
+    <radialGradient id="gGlow"><stop offset="0" stop-color="#ffd27a" stop-opacity=".6"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gBrass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6420"/><stop offset=".3" stop-color="#f3d982"/><stop offset=".55" stop-color="#b98a2e"/><stop offset=".8" stop-color="#f0d37a"/><stop offset="1" stop-color="#8a6420"/></linearGradient>
+    <linearGradient id="gBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+    <filter id="sb" x="-40%" y="-400%" width="180%" height="900%"><feGaussianBlur stdDeviation="3.4"/></filter>
+
+    <symbol id="candle" viewBox="0 0 200 220">
+      <ellipse cx="100" cy="199" rx="68" ry="7" fill="#2a1f1c" opacity=".34" filter="url(#sb)"/>
+      <circle cx="100" cy="44" r="54" fill="url(#gGlow)"/>
+      <path d="M46 74H154L150 187Q149.5 199 137 199H63Q50.5 199 50 187Z" fill="var(--vessel,#e9e3d5)"/>
+      <path d="M46 74H154L150 187Q149.5 199 137 199H63Q50.5 199 50 187Z" fill="url(#gCyl)"/>
+      <path d="M50 188Q100 197 150 188V191Q149.5 199 137 199H63Q50.5 199 50 191Z" fill="#000" opacity=".14"/>
+      <rect x="55" y="86" width="6" height="98" rx="3" fill="#fff" opacity=".3"/>
+      <rect x="140" y="90" width="2.5" height="88" rx="1.2" fill="#fff" opacity=".14"/>
+      <ellipse cx="100" cy="74" rx="54" ry="8.5" fill="var(--vessel,#e9e3d5)"/>
+      <ellipse cx="100" cy="74" rx="54" ry="8.5" fill="#fff" opacity=".18"/>
+      <ellipse cx="100" cy="75.5" rx="48.5" ry="6.6" fill="#000" opacity=".28"/>
+      <ellipse cx="100" cy="77" rx="47" ry="5.6" fill="var(--wax,#f3ecd9)"/>
+      <ellipse cx="92" cy="76" rx="22" ry="2.2" fill="#fff" opacity=".4"/>
+      <rect x="98.8" y="60" width="2.4" height="18" rx="1.2" fill="#2a1f1c"/>
+      <path d="M100 20c9 12 14 20 14 29a14 14 0 0 1-28 0c0-9 5-17 14-29z" fill="url(#gFlame)"/>
+      <path d="M100 34c5.5 7 8 12 8 17a8 8 0 0 1-16 0c0-5 2.5-10 8-17z" fill="#fff7d6"/>
+      <ellipse cx="100" cy="57" rx="3.4" ry="5" fill="#6f9cff" opacity=".6"/>
+      <rect x="66" y="110" width="68" height="58" rx="3" fill="var(--lbl,#fbf6ea)"/>
+      <rect x="66" y="110" width="68" height="58" rx="3" fill="url(#gLabel)"/>
+      <text x="100" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" letter-spacing="2" fill="#2a1f1c">KILN &amp; WICK</text>
+      <rect x="82" y="136" width="36" height="1.2" fill="#2a1f1c"/>
+      <text x="100" y="150" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" letter-spacing="1.2" fill="#2a1f1c">FIG &amp; CEDAR</text>
+      <text x="100" y="161" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.5" fill="#75675f">SOY WAX &#183; 8 OZ</text>
+    </symbol>
+    <symbol id="candle-sage" viewBox="0 0 200 220">
+      <ellipse cx="100" cy="199" rx="68" ry="7" fill="#2a1f1c" opacity=".34" filter="url(#sb)"/>
+      <circle cx="100" cy="44" r="54" fill="url(#gGlow)"/>
+      <path d="M46 74H154L150 187Q149.5 199 137 199H63Q50.5 199 50 187Z" fill="var(--vessel,#e9e3d5)"/>
+      <path d="M46 74H154L150 187Q149.5 199 137 199H63Q50.5 199 50 187Z" fill="url(#gCyl)"/>
+      <path d="M50 188Q100 197 150 188V191Q149.5 199 137 199H63Q50.5 199 50 191Z" fill="#000" opacity=".14"/>
+      <rect x="55" y="86" width="6" height="98" rx="3" fill="#fff" opacity=".3"/>
+      <rect x="140" y="90" width="2.5" height="88" rx="1.2" fill="#fff" opacity=".14"/>
+      <ellipse cx="100" cy="74" rx="54" ry="8.5" fill="var(--vessel,#e9e3d5)"/>
+      <ellipse cx="100" cy="74" rx="54" ry="8.5" fill="#fff" opacity=".18"/>
+      <ellipse cx="100" cy="75.5" rx="48.5" ry="6.6" fill="#000" opacity=".28"/>
+      <ellipse cx="100" cy="77" rx="47" ry="5.6" fill="var(--wax,#f3ecd9)"/>
+      <ellipse cx="92" cy="76" rx="22" ry="2.2" fill="#fff" opacity=".4"/>
+      <rect x="98.8" y="60" width="2.4" height="18" rx="1.2" fill="#2a1f1c"/>
+      <path d="M100 20c9 12 14 20 14 29a14 14 0 0 1-28 0c0-9 5-17 14-29z" fill="url(#gFlame)"/>
+      <path d="M100 34c5.5 7 8 12 8 17a8 8 0 0 1-16 0c0-5 2.5-10 8-17z" fill="#fff7d6"/>
+      <ellipse cx="100" cy="57" rx="3.4" ry="5" fill="#6f9cff" opacity=".6"/>
+      <rect x="66" y="110" width="68" height="58" rx="3" fill="var(--lbl,#fbf6ea)"/>
+      <rect x="66" y="110" width="68" height="58" rx="3" fill="url(#gLabel)"/>
+      <text x="100" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" letter-spacing="2" fill="#2a1f1c">KILN &amp; WICK</text>
+      <rect x="82" y="136" width="36" height="1.2" fill="#2a1f1c"/>
+      <text x="100" y="150" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" letter-spacing="1.2" fill="#2a1f1c">SAGE &amp; SALT</text>
+      <text x="100" y="161" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.5" fill="#75675f">SOY WAX &#183; 8 OZ</text>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="announce">Free delivery on orders over $60 &nbsp;|&nbsp; Each candle is hand-poured in small batches</div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Kiln <span>&amp;</span> Wick</a>
+    <ul><li>Candles</li><li>Ceramics</li><li>Diffusers</li><li>Gifts</li><li>Journal</li></ul>
+    <div class="tools"><svg class="ic"><use href="#i-search"/></svg><svg class="ic"><use href="#i-user"/></svg><svg class="ic"><use href="#i-bag"/></svg></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="crumbs"><a href="#">Home</a> / <a href="#">Candles</a> / Fig &amp; Cedar Ceramic Candle</div>
+
+  <div class="pdp">
+    <div class="gallery">
+      <div class="thumbs">
+        <button class="thumb on" aria-label="View 1"><svg viewBox="0 0 200 220"><use href="#candle" class="tv"/></svg></button>
+        <button class="thumb" aria-label="View 2" style="background:#f5dccf"><svg viewBox="0 0 200 220"><use href="#candle" class="tv" transform="translate(-30 -20) scale(1.3)"/></svg></button>
+        <button class="thumb" aria-label="View 3" style="background:#ecd2b8"><svg viewBox="0 0 200 220"><use href="#candle" class="tv"/><circle cx="40" cy="180" r="14" fill="#fff" opacity=".6"/></svg></button>
+        <button class="thumb" aria-label="View 4" style="background:#dfc8b4"><svg viewBox="0 0 200 220"><use href="#candle" class="tv" transform="translate(20 10) scale(.85)"/></svg></button>
+      </div>
+      <div class="main">
+        <span class="tag">BESTSELLER</span>
+        <svg viewBox="0 0 200 220" role="img" aria-label="Fig and Cedar ceramic candle with lit flame"><use id="mainCandle" href="#candle" class="tv"/></svg>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="rating"><b>★★★★★</b> 4.9 &nbsp;|&nbsp; 428 reviews</div>
+      <h1>Fig &amp; Cedar Ceramic Candle</h1>
+      <div class="price">$48 <s>$56</s></div>
+      <p class="short">A warm, woody blend of ripe fig and cedarwood in a hand-glazed ceramic vessel you can reuse long after the wax is gone.</p>
+
+      <div class="label">Scent notes</div>
+      <div class="notes"><span>Ripe fig</span><span>Cedarwood</span><span>Warm amber</span><span>Soft musk</span></div>
+
+      <div class="label">Vessel color <span id="colorName">Oat</span></div>
+      <div class="swatches">
+        <button class="sw" aria-pressed="true" aria-label="Oat" data-name="Oat" data-v="#e9e3d5" data-w="#f3ecd9" style="background:#e9e3d5"></button>
+        <button class="sw" aria-pressed="false" aria-label="Sage" data-name="Sage" data-v="#a7ad7f" data-w="#eef0e2" style="background:#a7ad7f"></button>
+        <button class="sw" aria-pressed="false" aria-label="Clay" data-name="Clay" data-v="#c98d6d" data-w="#f6e8d6" style="background:#c98d6d"></button>
+        <button class="sw" aria-pressed="false" aria-label="Charcoal" data-name="Charcoal" data-v="#3d2c27" data-w="#efe9dc" style="background:#3d2c27"></button>
+      </div>
+
+      <div class="label">Size</div>
+      <div class="sizes">
+        <button class="size" aria-pressed="true"><b>8 oz</b><small>Burns up to 50 hours</small></button>
+        <button class="size" aria-pressed="false"><b>12 oz</b><small>Burns up to 75 hours</small></button>
+      </div>
+
+      <div class="buy">
+        <div class="qty"><button id="minus" aria-label="Decrease">&minus;</button><span id="q">1</span><button id="plus" aria-label="Increase">+</button></div>
+        <button class="atc">Add to cart &nbsp;&middot;&nbsp; $48</button>
+      </div>
+      <label class="sub"><input type="checkbox"> Subscribe and save 10%, delivered every 2 months</label>
+      <div class="deliver"><svg class="ic"><use href="#i-truck"/></svg><span>Order within 4 hrs for dispatch today. <b>Estimated delivery: 3 to 5 days</b></span></div>
+
+      <div class="trust">
+        <div><svg class="ic"><use href="#i-flame"/></svg>Clean-burning soy wax</div>
+        <div><svg class="ic"><use href="#i-hand"/></svg>Hand-poured in small batches</div>
+        <div><svg class="ic"><use href="#i-leaf"/></svg>Reusable ceramic vessel</div>
+      </div>
+
+      <details open><summary>Description</summary><p>Our best-loved candle opens with juicy fig and settles into dry cedarwood and amber. Each vessel is glazed by hand, so no two are exactly alike. Made with a cotton wick and a blend of soy and coconut wax for a slow, even burn.</p></details>
+      <details><summary>Burn guide</summary><ul><li>Trim the wick to 5 mm before every burn.</li><li>On the first burn, let the wax melt to the edge (about 3 hours).</li><li>Never burn for more than 4 hours at a time.</li></ul></details>
+      <details><summary>Ingredients</summary><p>Soy wax, coconut wax, cotton wick, fragrance oils (phthalate-free), hand-glazed stoneware vessel.</p></details>
+      <details><summary>Shipping and returns</summary><p>Free standard shipping over $60. Easy 30-day returns on unused items.</p></details>
+    </div>
+  </div>
+
+  <section class="block">
+    <h2>Complete the ritual</h2>
+    <div class="rel">
+      <div class="rcard"><div class="img" style="background:#f5dccf"><svg viewBox="0 0 200 200">
+        <ellipse cx="100" cy="158" rx="72" ry="6" fill="#2a1f1c" opacity=".34" filter="url(#sb)"/>
+        <g transform="rotate(-5 100 120)"><rect x="52" y="74" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="52" y="74" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="54" cy="74" r="4.3" fill="#b4321f"/><circle cx="52.8" cy="72.6" r="1.4" fill="#fff" opacity=".5"/><rect x="61" y="70" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="61" y="70" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="63" cy="70" r="4.3" fill="#b4321f"/><circle cx="61.8" cy="68.6" r="1.4" fill="#fff" opacity=".5"/><rect x="70" y="76" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="70" y="76" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="72" cy="76" r="4.3" fill="#b4321f"/><circle cx="70.8" cy="74.6" r="1.4" fill="#fff" opacity=".5"/><rect x="79" y="68" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="79" y="68" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="81" cy="68" r="4.3" fill="#b4321f"/><circle cx="79.8" cy="66.6" r="1.4" fill="#fff" opacity=".5"/><rect x="88" y="73" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="88" y="73" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="90" cy="73" r="4.3" fill="#b4321f"/><circle cx="88.8" cy="71.6" r="1.4" fill="#fff" opacity=".5"/><rect x="97" y="69" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="97" y="69" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="99" cy="69" r="4.3" fill="#b4321f"/><circle cx="97.8" cy="67.6" r="1.4" fill="#fff" opacity=".5"/><rect x="106" y="75" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="106" y="75" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="108" cy="75" r="4.3" fill="#b4321f"/><circle cx="106.8" cy="73.6" r="1.4" fill="#fff" opacity=".5"/><rect x="115" y="71" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="115" y="71" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="117" cy="71" r="4.3" fill="#b4321f"/><circle cx="115.8" cy="69.6" r="1.4" fill="#fff" opacity=".5"/><rect x="124" y="67" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="124" y="67" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="126" cy="67" r="4.3" fill="#b4321f"/><circle cx="124.8" cy="65.6" r="1.4" fill="#fff" opacity=".5"/><rect x="133" y="74" width="4" height="44" rx="1.2" fill="#dcb779"/><rect x="133" y="74" width="1.6" height="44" fill="#fff" opacity=".35"/><circle cx="135" cy="74" r="4.3" fill="#b4321f"/><circle cx="133.8" cy="72.6" r="1.4" fill="#fff" opacity=".5"/>
+          <rect x="40" y="108" width="120" height="48" rx="4" fill="#b4492d"/><rect x="40" y="108" width="120" height="48" rx="4" fill="url(#gBox)"/>
+          <rect x="40" y="108" width="120" height="9" fill="#2a1f1c" opacity=".85"/><path d="M42 112h116" stroke="#fff" stroke-opacity=".14" stroke-dasharray="2 2"/>
+          <rect x="54" y="122" width="92" height="28" rx="3" fill="#f1e8de"/>
+          <text x="100" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="12" letter-spacing="2.4" fill="#2a1f1c">KILN &amp; WICK</text>
+          <text x="100" y="148.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="4.6" letter-spacing="1.6" fill="#75675f">SAFETY MATCHES &#183; 40</text>
+        </g></svg></div><h3>Matchbox Set</h3><p>Box of 40 long matches</p><div class="pr">$12</div></div>
+
+      <div class="rcard"><div class="img" style="background:#ecd2b8"><svg viewBox="0 0 200 200">
+        <ellipse cx="102" cy="162" rx="70" ry="6" fill="#2a1f1c" opacity=".3" filter="url(#sb)"/>
+        <g transform="rotate(-32 100 100)">
+          <rect x="52" y="97" width="104" height="7" rx="3.5" fill="url(#gBrass)"/>
+          <path d="M154 90q24-4 28 12l-8 5q-3-9-20-7z" fill="url(#gBrass)"/>
+          <path d="M156 106q16 3 20 14l-10 1q-3-7-10-8z" fill="url(#gBrass)"/>
+          <ellipse cx="44" cy="92" rx="16" ry="11" fill="none" stroke="url(#gBrass)" stroke-width="6"/>
+          <ellipse cx="44" cy="112" rx="16" ry="11" fill="none" stroke="url(#gBrass)" stroke-width="6"/>
+          <circle cx="104" cy="100.5" r="4" fill="#6b4c17"/><circle cx="103" cy="99.4" r="1.4" fill="#fff" opacity=".6"/>
+        </g></svg></div><h3>Wick Trimmer</h3><p>Brushed brass finish</p><div class="pr">$22</div></div>
+
+      <div class="rcard"><div class="img" style="background:#e0d3c4"><svg viewBox="0 0 200 200">
+        <ellipse cx="100" cy="150" rx="74" ry="7" fill="#2a1f1c" opacity=".3" filter="url(#sb)"/>
+        <path d="M28 102Q30 150 100 150T172 102Z" fill="#ead9c3"/><path d="M28 102Q30 150 100 150T172 102Z" fill="url(#gCyl)"/>
+        <ellipse cx="100" cy="102" rx="72" ry="15" fill="#f2e7d8"/><ellipse cx="100" cy="102" rx="72" ry="15" fill="#fff" opacity=".18"/>
+        <ellipse cx="100" cy="105" rx="62" ry="10.5" fill="#cdb292"/><ellipse cx="100" cy="108" rx="52" ry="7" fill="#b89d7c" opacity=".7"/>
+        <path d="M34 110Q38 138 68 146" stroke="#fff" stroke-opacity=".5" fill="none" stroke-width="3" stroke-linecap="round"/>
+        <path d="M30 100Q100 78 170 100" stroke="#fff" stroke-opacity=".0" fill="none"/>
+        <ellipse cx="82" cy="106" rx="9" ry="2.4" fill="#2a1f1c" opacity=".35"/>
+        </svg></div><h3>Ceramic Snuffer Dish</h3><p>Hand-glazed, oat</p><div class="pr">$18</div></div>
+
+      <div class="rcard"><div class="img" style="background:#dfc8b4"><svg viewBox="0 0 200 220"><use href="#candle-sage" style="--vessel:#a7ad7f;--wax:#eef0e2" transform="translate(10 10) scale(.9)"/></svg></div><h3>Sage &amp; Salt Candle</h3><p>Coastal, herbal, bright</p><div class="pr">$48</div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Customer reviews</h2>
+    <div class="reviews">
+      <div>
+        <div class="score">4.9</div>
+        <div class="rating"><b>★★★★★</b> Based on 428 reviews</div>
+        <div class="bars">
+          <div class="bar">5 ★<i style="--w:92%"></i>394</div>
+          <div class="bar">4 ★<i style="--w:6%"></i>26</div>
+          <div class="bar">3 ★<i style="--w:1%"></i>5</div>
+          <div class="bar">2 ★<i style="--w:.5%"></i>2</div>
+          <div class="bar">1 ★<i style="--w:.3%"></i>1</div>
+        </div>
+      </div>
+      <div>
+        <div class="rev"><div class="top"><b class="s">★★★★★</b><span>2 weeks ago</span></div><h3>Fills the whole room</h3><p>The fig is sweet but not sugary and the cedar keeps it grounded. The Clay vessel looks gorgeous on my shelf.</p><div class="ver"><svg class="ic"><use href="#i-check"/></svg>Verified buyer, Chloe R.</div></div>
+        <div class="rev"><div class="top"><b class="s">★★★★★</b><span>1 month ago</span></div><h3>Reusing the vessel already</h3><p>Burned evenly down to the last centimeter. I washed the jar and it now holds my plant clippings.</p><div class="ver"><svg class="ic"><use href="#i-check"/></svg>Verified buyer, Marcus T.</div></div>
+        <div class="rev"><div class="top"><b class="s">★★★★☆</b><span>2 months ago</span></div><h3>A beautiful gift</h3><p>Arrived in lovely packaging. I would love a larger size, so I'm glad the 12 oz exists.</p><div class="ver"><svg class="ic"><use href="#i-check"/></svg>Verified buyer, Dana P.</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div><div class="logo">Kiln &amp; Wick</div><p style="max-width:260px">Small-batch candles and ceramics for slower evenings.</p></div>
+      <div><h4>Shop</h4><ul><li>Candles</li><li>Ceramics</li><li>Diffusers</li><li>Gift sets</li></ul></div>
+      <div><h4>Support</h4><ul><li>Shipping</li><li>Returns</li><li>Care guide</li><li>Contact</li></ul></div>
+      <div><h4>About</h4><ul><li>Our studio</li><li>Sustainability</li><li>Wholesale</li><li>Journal</li></ul></div>
+    </div>
+    <div class="legal">&copy; 2026 Kiln &amp; Wick. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  var uses=document.querySelectorAll('.tv');
+  function setColor(v,w){uses.forEach(function(u){u.style.setProperty('--vessel',v);u.style.setProperty('--wax',w);});}
+  document.querySelectorAll('.sw').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.sw').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      document.getElementById('colorName').textContent=b.dataset.name;
+      setColor(b.dataset.v,b.dataset.w);
+    });
+  });
+  document.querySelectorAll('.size').forEach(function(b){
+    b.addEventListener('click',function(){document.querySelectorAll('.size').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');});
+  });
+  document.querySelectorAll('.thumb').forEach(function(b){
+    b.addEventListener('click',function(){document.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('on')});b.classList.add('on');});
+  });
+  var q=1,qe=document.getElementById('q');
+  document.getElementById('plus').onclick=function(){q++;qe.textContent=q};
+  document.getElementById('minus').onclick=function(){if(q>1){q--;qe.textContent=q}};
+</script>
+</body>
+</html>
